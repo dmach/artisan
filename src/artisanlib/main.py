@@ -614,11 +614,12 @@ elif appTranslator.load("artisan_" + locale, QApplication.applicationDirPath() +
     app.installTranslator(appTranslator)
 
 
-from const import UIconst
 from artisanlib import pid
+from artisanlib.const import UIconst
 from artisanlib.time import ArtisanTime
 
 # import artisan.plus module
+sys.path.insert(0, os.path.dirname(__file__))
 import plus.config
 import plus.util
 import plus.sync

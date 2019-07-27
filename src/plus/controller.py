@@ -112,8 +112,8 @@ def connect(clear_on_failure=False,interactive=True):
                         config.logger.error("controller: keyring Exception %s",e)
                 if interactive and (config.app_window.plus_account is None or config.passwd is None): # @UndefinedVariable
                     # ask user for credentials
-                    import plus.login
-                    login,passwd,remember = plus.login.plus_login(config.app_window,config.app_window.plus_email,config.app_window.plus_remember_credentials) # @UndefinedVariable
+                    from .login import plus_login
+                    login,passwd,remember = plus_login(config.app_window,config.app_window.plus_email,config.app_window.plus_remember_credentials) # @UndefinedVariable
                     config.app_window.plus_remember_credentials = remember
                     # store credentials
                     config.app_window.plus_account = login
